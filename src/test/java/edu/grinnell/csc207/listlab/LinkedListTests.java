@@ -1,7 +1,6 @@
 package edu.grinnell.csc207.listlab;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.Test;
 
 import net.jqwik.api.ForAll;
@@ -14,6 +13,25 @@ public class LinkedListTests {
         LinkedList list = new LinkedList();
         assertEquals(0, list.size());
     }
+
+    @Test
+    public void addListTest(){
+        LinkedList list = new LinkedList();
+        list.add(1);
+        
+        assertEquals(1, list.first.val);
+    }
+
+    @Test
+    public void addMoreListTest(){
+        LinkedList list = new LinkedList();
+        list.add(1);
+        list.add(2);
+
+        
+        assertEquals(2, list.first.next.val);
+    }
+
 
     @Test
     public void listAddSize10() {
