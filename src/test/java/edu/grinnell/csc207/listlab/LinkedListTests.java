@@ -50,4 +50,35 @@ public class LinkedListTests {
         }
         return list.size() == sz;
     }
+
+    @Test
+    public void removeElement() {
+        LinkedList list = new LinkedList();
+        for (int i = 0; i < 10; i++) {
+            list.add(i);
+        }
+        list.remove(4);
+        assertEquals(9, list.size());
+    }
+
+    @Test
+    public void removeFirstElement() {
+        LinkedList list = new LinkedList();
+        for (int i = 0; i < 10; i++) {
+            list.add(i);
+        }
+        System.out.println(list.remove(0));
+        assertEquals(9, list.size());
+    }
+
+    @Test
+    public void checkFirstElement() {
+        LinkedList list = new LinkedList();
+        for (int i = 0; i < 10; i++) {
+            list.add(i);
+        }
+        
+        assertEquals(0, list.remove(0));
+    }
+
 }

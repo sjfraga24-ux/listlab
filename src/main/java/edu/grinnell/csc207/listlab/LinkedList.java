@@ -41,7 +41,7 @@ public class LinkedList {
     }
 
     /**
-     * @return the number of elements in the list
+     * @return the number throw new UnsupportedOperationException("Unimplemented method 'remove'");of elements in the list
      */
     public int size() {
         int count = 0;
@@ -74,6 +74,20 @@ public class LinkedList {
      * @return the element at <code>index</code>
      */
     public int remove(int index) {
-        throw new UnsupportedOperationException("Unimplemented method 'remove'");
+        Node currNode = first;
+        int value;
+        if(index == 0){
+            value = currNode.val;
+            first = currNode.next;
+            return value;
+        } else{
+            for(int i = 0; i < index -1; i++){
+                currNode = currNode.next;
+            }
+            value = currNode.next.val;
+            currNode.next = currNode.next.next;
+            return value;
+        }
+        
     }
 }
